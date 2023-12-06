@@ -31,7 +31,8 @@ export default function StyledComponentText({children, color, fontSize, fontWeig
         color === 'primary' && styles.colorPrimary,
         color === 'secondaty' && styles.colorSecondary,
         fontSize === 'subheading' && styles.subheading,
-        fontWeight === 'bold' && styles.bold
+        fontWeight === 'bold' && styles.bold,
+        style
     ]
 
     return (
