@@ -1,6 +1,6 @@
 import React from "react";
 import { StyleSheet, TextInput } from "react-native";
-// import th
+
 const styles = StyleSheet.create({
     textInput : {
         borderRadius: 5,
@@ -8,15 +8,20 @@ const styles = StyleSheet.create({
         borderColor: '#999',
         paddingHorizontal: 20,
         paddingVertical: 10,
-        marginBottom: 10
+        marginBottom: 10,
+        marginTop: 12
+    },
+    error: {
+        borderColor: 'red'
     }
 })
 
-const StyledComponentTextInput = ({style = {}, ...props}) => {
-    const styledInput = {
-        ...styles.textInput,
-        ...style
-    }
+const StyledComponentTextInput = ({style = {},error, ...props}) => {
+    const styledInput = [
+        styles.textInput,
+        style,
+        error && styles.error
+    ]
     return (
         <TextInput style={styledInput} {...props}/>
     )
